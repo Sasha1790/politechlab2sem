@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x;
+    int i;
+    printf("Введіть суму в грн: ");
+    scanf("%d", &x);
+    printf("В яку валюти ви хочете перевести грн \n1-євро, \n2-доллари \nваш вибір: ");
+    scanf("%d", &i);
+    if (i == 1)
+        printf("%d * 41 = %d",x, x*41);
+    if (i == 2)
+        printf("%d * 39 = %d",x, x*39);
+    return 0;
+    
+}
