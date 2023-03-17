@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    float price1 = 10.50;  
+    float price2 = 5.25;    
+    float price3 = 8.75;    
+    float price4 = 12.00;   
+    float price5 = 9.99;    
+       
+    
+    int number;     
+    int kilkist;           
+    float finish;      
+    
+    printf ("1 - Яйця\n");
+    printf ("2 - Молоко\n");
+    printf ("3 - Шоколад\n");
+    printf ("4 - Хліб5\n");
+    printf ("5 - Яблука\n");
+    
+    
+    printf("Введіть номер вибраного товару : ");
+    scanf("%d", &number);
+    
+    
+    if (number < 1 || number > 5) {
+        printf("Некоректний номер товару!\n");
+        return 1;   
+    }
+    
+    
+    printf("Введіть кількість вибраного товару: ");
+    scanf("%d", &kilkist);
+    
+    
+    switch (number) {
+        case 1:
+            finish = price1 * kilkist;
+            break;
+        case 2:
+            finish = price2 * kilkist;
+            break;
+        case 3:
+            finish = price3 * kilkist;
+            break;
+        case 4:
+            finish = price4 * kilkist;
+            break;
+        case 5:
+            finish = price5 * kilkist;
+            break;
+        
+    }
+    
+    
+    printf("Загальна вартість товару: %.2f грн\n", finish);
+    
+    return 0;   
+}
