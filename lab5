@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int number;         
+    int guess;         
+    int attempts = 0;   
+    
+    
+    srand(time(0));
+    number = rand() % 100 + 1;
+    
+    
+    printf("Я задумав число від 1 до 100. Ви маєте 5 спроб, щоб вгадати його.\n");
+    
+    
+    while (attempts < 5) {
+        
+        printf("Введіть число: ");
+        scanf("%d", &guess);
+        
+        
+        if (guess == number) {
+            printf("Вітаю, ви вгадали число %d з %d спроб!\n", number, attempts + 1);
+            return 0;   
+        } else {
+            printf("Невірно. ");
+            if (guess < number) {
+                printf("Задумане число більше від введеного.\n");
+            } else {
+                printf("Задумане число менше від введеного.\n");
+            }
+        }
+        
+        attempts++; // збільшити лічильник спроб
+    }
+    
+    
+    printf("Ви не вгадали число %d за 5 спроб. Спробуйте ще раз!\n", number);
+    
+    return 0; 
