@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];//збереження
+    int x = 0, y = 0;
+
+    printf("Введіть рядок: ");
+    fgets(str, 100, stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (tolower(str[i]) == 'e') {
+            x++;
+        } else if (tolower(str[i]) == 'o') {
+            y++;
+        }
+    }
+
+    printf("Кількість букв 'е': %d\n", x);
+    printf("Кількість букв 'о': %d\n", y);
+    return 0;
+}
