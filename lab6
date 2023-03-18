@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+float calculate_cost(int min) {
+    float cost_per_minute;
+
+    if (min <= 10) {
+        cost_per_minute = 1.2;
+    } else {
+        cost_per_minute = 1.0;
+    }
+
+    return min * cost_per_minute;
+}
+
+int main() {
+    int min;
+    float cost;
+
+    printf("Скільки хвилин ви говорили по телефону?: ");
+    scanf("%d", &min);
+
+    cost = calculate_cost(min);
+
+    printf("Ціна дзвінка: %.2f грн\n", cost);
+
+    return 0;
+}
