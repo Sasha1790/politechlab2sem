@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+
+void sum_columns(int arr[][COLS], int rows);
+void product_rows(int arr[][COLS], int rows);
+
+int main() {
+    int arr[ROWS][COLS];
+
+    // Ввід елементів двовимірного масиву
+    printf("Введіть елементи масиву:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    // Обчислення суми елементів стовпців та добутку елементів рядків
+    sum_columns(arr, ROWS);
+    product_rows(arr, ROWS);
+
+    return 0;
+}
+
+void sum_columns(int arr[][COLS], int rows) {
+    int sum;
+
+    printf("Суми елементів стовпців:\n");
+    for (int j = 0; j < COLS; j++) {
+        sum = 0;
+        for (int i = 0; i < rows; i++) {
+            sum += arr[i][j];
+        }
+        printf("%d ", sum);
+    }
+    printf("\n");
+}
+
+void product_rows(int arr[][COLS], int rows) {
+    int product;
+
+    printf("Добутки елементів рядків:\n");
+    for (int i = 0; i < rows; i++) {
+        product = 1;
+        for (int j = 0; j < COLS; j++) {
+            product *= arr[i][j];
+        }
+        printf("%d ", product);
+    }
+    printf("\n");
+}
